@@ -1,0 +1,108 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+
+
+
+.lineup{
+    background-color: v.$rosa;
+    padding: 2rem;
+
+    h3,p{
+        text-align: center;
+        color: #fff;
+    }
+}
+
+
+.bg-amarillo{
+    background-color: v.$amarillo;
+
+
+    li:nth-child(odd){
+        background-color: darken(v.$amarillo,  20%);
+    }
+}
+
+.bg-verde{
+    background-color: v.$verde;
+
+    li:nth-child(odd){
+        background-color: darken(v.$verde,  15%);
+    }
+}
+
+
+.escenario-contenedor{
+
+    p{
+        color: #000;
+    }
+
+ 
+
+    @include m.desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+
+    .escenario{
+        padding-top: 2rem;
+
+        margin-bottom: 5rem;
+
+        p{
+            &:after{
+                content: "";
+                display: block;
+                width:20rem;
+                height:10rem;
+                background-size: 15rem;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin: 2rem auto 0 auto; //centra iconos escenario
+               
+            }
+        }
+
+    }
+    
+
+}
+
+
+.edm .nombre-escenario:after{
+    background-image: url("../../build/img/icono_edm.png");
+}
+
+.rock .nombre-escenario:after{
+    background-image: url("../../build/img/icono_rock.png");
+    
+}
+
+.nombre-escenario{
+    font-weight: bold;
+    font-size: 2.5rem;
+    
+}
+
+.calendario{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+    li{
+
+        padding: 2.5rem;
+        
+        span{
+            font-weight: bold;
+        }
+    }
+
+}
+
+    
